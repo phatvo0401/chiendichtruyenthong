@@ -46,13 +46,38 @@
     display: block;
 }
 
-/* Điều chỉnh riêng cho Mobile để không bị quá nhỏ */
+/* Tối ưu riêng cho Mobile (Dưới 768px) */
 @media (max-width: 768px) {
     .smart-row {
-        flex-wrap: wrap; /* Mobile thì cho phép xuống dòng */
+        gap: 10px; /* Thu hẹp khoảng cách giữa các ảnh */
     }
     .gallery-item {
-        flex: 1 1 calc(50% - 10px); /* Mobile hiện 2 hình 1 hàng */
+        /* Hiển thị 1 hình mỗi hàng để nhìn rõ chi tiết thiết kế */
+        /* Nếu muốn 2 hình hãy đổi thành: calc(50% - 10px) */
+        flex: 1 1 100%; 
+    }
+    
+    .category-header {
+        margin: 40px 0 20px 0; /* Giảm khoảng cách thừa trên mobile */
+    }
+
+    .category-header h2 {
+        font-size: 11px; /* Giảm cỡ chữ tiêu đề để không bị tràn */
+        letter-spacing: 0.2em;
+    }
+}
+
+        @media (max-width: 640px) {
+    main.pt-40 {
+        padding-top: 120px; /* Giảm padding top trên mobile */
+    }
+    header h1 {
+        font-size: 1.8rem !important; /* Thu nhỏ tiêu đề chính */
+        line-height: 1.2;
+    }
+    header p {
+        letter-spacing: 0.2em !important;
+        font-size: 8px !important;
     }
 }
 
@@ -341,6 +366,7 @@ btt.onclick = (e) => {
     </script>
 </body>
 </html>
+
 
 
 
